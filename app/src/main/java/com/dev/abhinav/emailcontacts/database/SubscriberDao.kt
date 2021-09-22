@@ -1,7 +1,7 @@
 package com.dev.abhinav.emailcontacts.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SubscriberDao {
@@ -18,5 +18,5 @@ interface SubscriberDao {
     suspend fun deleteAll() : Int
 
     @Query("SELECT * FROM subscriber_data_table")
-    fun getAllSubscribers(): Flow<List<Subscriber>>
+    fun getAllSubscribers(): LiveData<List<Subscriber>>
 }
